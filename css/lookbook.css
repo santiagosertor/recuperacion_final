@@ -1,0 +1,127 @@
+/* Estilo de la sección */
+.section-lookbook {
+    padding: 2rem;
+    background-color: #0066cc;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centrado vertical y horizontal */
+    flex-direction: column;
+    position: relative;
+    height: 80vh; /* Ajusta la altura para que la imagen no ocupe toda la pantalla */
+    overflow: hidden; /* Asegura que no se desborde contenido */
+  }
+  
+  /* Contenedor del carrusel */
+  .section-lookbook__carousel {
+    position: relative;
+    max-width: 1000px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  /* Ocultar inputs de tipo radio */
+  .section-lookbook__radio {
+    display: none;
+  }
+  
+  /* Contenedor de las imágenes */
+  .section-lookbook__slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 400%; /* Hace que las 4 imágenes ocupen el 100% (25% por cada imagen) */
+    height: 80%; /* Ajusta la altura para que la imagen no ocupe toda la sección */
+  }
+  
+  /* Cada slide (una imagen) */
+  .section-lookbook__slide {
+    width: 25%; /* Cada imagen ocupa el 25% del contenedor */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden; /* Evitar que se desborde el contenido */
+    height: 100%; /* La altura de cada slide es el 100% del contenedor */
+  }
+  
+  /* Estilo de la imagen */
+  .section-lookbook__slide img {
+    width: 100%;  /* La imagen ocupa todo el ancho disponible */
+    height: 100%;  /* La imagen ocupa toda la altura del contenedor */
+    object-fit: cover;  /* Asegura que la imagen cubra todo el contenedor */
+    object-position: center top;  /* Centra la imagen al top, ajustando el recorte */
+    border-radius: 16px;
+  }
+  
+  /* Contenedor del texto */
+  .section-lookbook__overlay {
+    position: absolute;
+    bottom: 2rem; /* Ajusta un poco más abajo para que no quede tan pegado a la imagen */
+    left: 50%;
+    transform: translateX(-50%); /* Centra el texto debajo de la imagen */
+    color: #ffffff;
+    background-color: #0066cc; /* Color de fondo azul */
+    padding: 1rem;
+    border-radius: 8px; /* Bordes redondeados */
+    font-weight: bold; /* Negrita para el texto */
+    text-align: center; /* Centra el texto dentro del contenedor */
+    width: 80%; /* Ajusta el ancho del texto */
+  }
+  
+  /* Estilo del texto */
+  .section-lookbook__text {
+    font-size: 14px;
+    margin: 0;
+  }
+  
+  /* Título */
+  .section-lookbook__title {
+    font-size: 28px;
+    margin: 0.5rem 0 0;
+  }
+  
+  /* Movimiento entre slides (controlado por radio inputs) */
+  #slide1:checked ~ .section-lookbook__slides {
+    transform: translateX(0);
+  }
+  
+  #slide2:checked ~ .section-lookbook__slides {
+    transform: translateX(-25%); /* Mueve a la segunda imagen */
+  }
+  
+  #slide3:checked ~ .section-lookbook__slides {
+    transform: translateX(-50%); /* Mueve a la tercera imagen */
+  }
+  
+  #slide4:checked ~ .section-lookbook__slides {
+    transform: translateX(-75%); /* Mueve a la cuarta imagen */
+  }
+  
+  /* Navegación por puntos */
+  .section-lookbook__pagination {
+    position: absolute;
+    bottom: 1rem; /* Los puntos están al final, debajo de la imagen */
+    left: 50%;
+    transform: translateX(-50%); /* Centra los puntos horizontalmente */
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .section-lookbook__dot {
+    width: 12px; /* Aumenta el tamaño de los puntos */
+    height: 12px; /* Aumenta el tamaño de los puntos */
+    background-color: #cccccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  /* Cambio de color en los puntos al estar seleccionados */
+  #slide1:checked ~ .section-lookbook__pagination label[for="slide1"],
+  #slide2:checked ~ .section-lookbook__pagination label[for="slide2"],
+  #slide3:checked ~ .section-lookbook__pagination label[for="slide3"],
+  #slide4:checked ~ .section-lookbook__pagination label[for="slide4"] {
+    background-color: #ffffff;
+  }
+  

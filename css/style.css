@@ -1,0 +1,167 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+@import url(lookbook.css);
+@import url(tarjetas.css);
+@import url(play.css);
+@import url(zammi.css);
+@import url(newsletter.css);
+@import url(social.css);
+/* Variables globales */
+:root {
+  --primary-color: #1a73e8; /* Azul */
+  --secondary-color: #000; /* Negro */
+  --text-color: #333; /* Gris oscuro */
+  --bg-color: #f9f9f9; /* Fondo claro */
+  --font-family: 'Arial', sans-serif;
+  --padding: 1rem;
+  --border-radius: 8px solid #1a73e8 ;
+  
+}
+*{
+
+  font-family: 'Arial', sans-serif;
+}
+
+/* block de transparencia */
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(108, 108, 108, 0.762); /* Gris translúcido */
+  pointer-events: none; /* Evita interferencias con eventos */
+  border-radius: 20px; /* Mantiene el borde redondeado */
+}
+
+
+/* Hero Section */
+.hero {
+  background-color: var(--bg-color);
+  font-family: var(--font-family);
+  padding: 30px;
+}
+
+.hero__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--padding);
+}
+
+.hero__search {
+  display: flex;
+  flex-direction: column; /* Coloca el icono y la línea en columna */
+  align-items: end; /* Centra horizontalmente el icono con respecto a la línea */
+  justify-content: flex-end; /* Asegura que la línea quede en la parte inferior */
+}
+
+.hero__logo {
+  display: flex;
+  align-items: baseline;
+}
+.hero__logo-icono{
+  display: flex;
+  margin-right: 10px;
+  font-size: 30px;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+.hero__search-icono{
+  color: var(--primary-color);
+}
+
+.hero__logo-text {
+  font-weight: bold;
+  color: var(--primary-color);
+  font-size: 2.0rem;
+}
+
+.hero__logo-style {
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-left: 0.5rem;
+  font-size: 2.0rem
+}
+
+.hero__menu-btn,
+.hero__search-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: var(--primary-color);
+}
+
+.hero__search-line {
+  display: block;
+  width: 200px; /* Largo de la línea horizontal */
+  height: 2px; /* Grosor de la línea */
+  background-color: var(--primary-color); /* Color de la línea */
+  margin-left: 0.5rem; /* Espacio entre el icono y la línea */
+
+}
+
+.hero__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.hero__text {
+  max-width: 40%;
+  margin-left: 10%;
+  margin-bottom: 20%
+}
+
+.hero__title {
+  font-size: 80px;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.hero__description {
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  font-size: 20px;
+}
+
+.hero__btn {
+  display: inline-block;
+  padding: 0.5rem 2rem;
+  background-color: var(--bg-color);
+  color: var(--primary-color);
+  text-decoration: none;
+  border-radius:20px;
+  border: 1px solid var(--primary-color);
+  font-weight: bold;
+  font-size: 20px;
+  margin-left: 70%;
+}
+.hero__btn :hover{
+  background-color: var(--primary-color);
+  transition: 1s;
+}
+
+.hero__image-wrapper {
+  max-width: 30%;
+  position: relative;
+display: inline-block;
+  overflow: hidden;
+  height: auto;
+  width: 100%;
+  border-radius: 40%;
+  margin-right: 20%;
+}
+
+.hero__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ajusta la imagen dentro del contenedor */
+  object-position: center top; /* Recorta desde la parte superior de la imagen */
+  background-color: #000000;
+}
+
+

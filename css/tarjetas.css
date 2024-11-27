@@ -1,0 +1,102 @@
+/* General */
+.trends {
+  padding: var(--padding);
+  background-color: var(--bg-color);
+}
+
+.trends__title {
+  font-size: 200px;
+  font-weight: bold;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Grid layout */
+.trends__grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* Izquierda pequeña, derecha grande */
+  grid-template-rows: repeat(2, auto); /* Dos filas */
+  gap: 1rem;
+}
+
+.trends__block {
+  display: flex;
+  flex-direction: column;
+}
+
+.trends__block--small {
+  grid-column: 1; /* Columna izquierda */
+}
+
+.trends__block--large {
+  grid-column: 2; /* Columna derecha */
+  grid-row: 1 / span 2; /* Ocupa dos filas (vertical) */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Alinea el contenido hacia el inicio del contenedor */
+  position: relative; /* Necesario para ajustes más controlados */
+}
+
+/* Ajustes de las imágenes */
+.trends__image {
+  width: 80%;
+  height: auto;
+  object-fit: cover;
+  border: 1px solid var(--secondary-color);
+}
+
+/* Imagen 1: Ajustar posición para enfocar pierna derecha y recortar la izquierda */
+.trends__block--small:nth-child(1) .trends__image {
+  height: 450px; /* Altura conservada */
+  position: relative;
+  object-fit: cover; /* Mantiene proporciones */
+  object-position: 40% bottom; /* Subimos un poco y desplazamos a la derecha */
+}
+
+
+/* Imagen 2: Mostrar de la boca al brasier */
+.trends__block--small:nth-child(2) .trends__image {
+  height: 400px; /* Altura ampliada */
+  position: relative;
+  object-position: center ; /* Centra desde la parte inferior */
+}
+
+/* Imagen 3: Mostrar parte superior completa y reducir tamaño */
+.trends__block--large .trends__image {
+  position: relative;
+  height: 800px; /* Mayor altura para destacar */
+  object-position: top; /* Enfoca la parte superior */
+}
+
+/* Texto debajo de las imágenes */
+.trends__text {
+  margin-top: 0.5rem;
+}
+
+.trends__category {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  margin-bottom: 0.2rem;
+}
+
+/* Subrayado decorativo para h3 */
+.trends__headline {
+  font-size: 40px;
+  font-weight: bold;
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+
+.trends__link {
+  display: block;
+  text-align: right;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  text-decoration: none;
+  margin-top: -1rem; /* Subimos un poco el texto */
+}
