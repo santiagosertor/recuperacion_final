@@ -21,6 +21,11 @@
   font-family: 'Arial', sans-serif;
 }
 
+body {
+  margin: 0; /* Elimina cualquier margen adicional */
+  overflow-x: hidden; /* Oculta el scroll horizontal */
+}
+
 /* block de transparencia */
 .image-overlay {
   position: absolute;
@@ -58,6 +63,7 @@
 .hero__logo {
   display: flex;
   align-items: baseline;
+  margin-top: 100px;
 }
 .hero__logo-icono{
   display: flex;
@@ -66,8 +72,10 @@
   color: var(--primary-color);
   font-weight: bold;
 }
+
 .hero__search-icono{
   color: var(--primary-color);
+  margin-top: 200px;
 }
 
 .hero__logo-text {
@@ -98,6 +106,7 @@
   height: 2px; /* Grosor de la línea */
   background-color: var(--primary-color); /* Color de la línea */
   margin-left: 0.5rem; /* Espacio entre el icono y la línea */
+  
 
 }
 
@@ -164,4 +173,85 @@ display: inline-block;
   background-color: #000000;
 }
 
+/* Líneas decorativas */
+.hero__line-blue,
+.hero__line-white {
+  position: absolute;
+  bottom: 5%; /* Ajustar posición en base al diseño */
+  left: 10%; /* Ajustar posición en base al diseño */
+  z-index: 10;
+}
+
+.hero__line-blue {
+  width: 150px;
+  height: 4px;
+  background-image: url('/img/Shape\ .png');
+  background-size: cover;
+}
+
+.hero__line-white {
+  width: 130px;
+  height: 2px;
+  background-image: url('/img/Shape\ \ \(1\).png');
+  background-size: cover;
+  bottom: 7%; /* Posición ligeramente arriba de la línea azul */
+  left: 12%;
+}
+
+/* Flores decorativas */
+.hero__flower {
+  position: absolute;
+  width: 100px; /* Tamaño ajustado */
+  height: auto;
+  z-index: 5;
+}
+
+.hero__flower--left {
+  width: 10%;
+  top: 80%;
+  left: -4%;
+ 
+}
+
+.hero__flower--right {
+  width: 20%;
+  bottom: 20%;
+  right: -8%;
+}
+
+/* Hojas decorativas */
+.hero__leaf {
+  position: absolute;
+  width: 60px; /* Tamaño ajustado */
+  height: auto;
+  opacity: 0.8;
+  z-index: 3;
+}
+
+.hero__leaf--top-left {
+  top: -2%;
+  left: 30%;
+  transform: rotate(90deg);
+}
+
+.hero__leaf--bottom-left {
+  bottom: 15%;
+  left: 10%;
+}
+
+.hero__leaf--top-right {
+  top: 5%;
+  right: 15%;
+}
+
+.hero__leaf--bottom-right {
+  bottom: 15%;
+  right: 10%;
+}
+
+.hero__leaf--center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 

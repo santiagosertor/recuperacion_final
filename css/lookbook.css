@@ -8,14 +8,14 @@
     align-items: center; /* Centrado vertical y horizontal */
     flex-direction: column;
     position: relative;
-    height: 80vh; /* Ajusta la altura para que la imagen no ocupe toda la pantalla */
+    height: 140vh; /* Ajusta la altura para que la imagen no ocupe toda la pantalla */
     overflow: hidden; /* Asegura que no se desborde contenido */
   }
   
   /* Contenedor del carrusel */
   .section-lookbook__carousel {
     position: relative;
-    max-width: 1000px;
+    max-width: 1500px;
     width: 100%;
     height: 100%;
     overflow: hidden;
@@ -58,7 +58,7 @@
   .section-lookbook__overlay {
     position: absolute;
     bottom: 2rem; /* Ajusta un poco más abajo para que no quede tan pegado a la imagen */
-    left: 50%;
+    left: 10%;
     transform: translateX(-50%); /* Centra el texto debajo de la imagen */
     color: #ffffff;
     background-color: #0066cc; /* Color de fondo azul */
@@ -102,7 +102,7 @@
   .section-lookbook__pagination {
     position: absolute;
     bottom: 1rem; /* Los puntos están al final, debajo de la imagen */
-    left: 50%;
+    left: 90%;
     transform: translateX(-50%); /* Centra los puntos horizontalmente */
     display: flex;
     gap: 0.5rem;

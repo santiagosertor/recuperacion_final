@@ -1,11 +1,13 @@
 /* Estilo general de la sección */
 .play-style-section {
     background-color: #0066cc;
+    position: relative;
     padding: 2rem;
     border-radius: 16px;
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: -1;
   }
   
   /* Contenedor principal */

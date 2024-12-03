@@ -3,11 +3,61 @@
     padding: 3rem 1rem;
     background-color: var(--bg-color); /* Fondo general */
     text-align: center;
+    position: relative; /* Necesario para posicionar los elementos decorativos */
   }
+
+/* Agregar elementos decorativos: flores y hojas */
+.zammi-muses__flower,
+.zammi-muses__leaf {
+  position: absolute;
+  pointer-events: none; /* Evita que interfieran con los clics */
+  z-index: 1; /* Asegura que queden detrás del contenido principal */
+}
+
+/* Posicionamiento de las flores */
+.zammi-muses__flower--top-left {
+  top: -50px;
+  position: absolute;
+  left: 200px;
+  width: 150px;
+  height: 150px;
+  background: url('../img/Flower.png') no-repeat center;
+  background-size: contain;
+  z-index: 2;
+}
+
+.zammi-muses__flower--bottom-right {
+  bottom: 100px;
+  right: -70px;
+  width: 150px;
+  height: 150px;
+  background: url('../img/Flower.png') no-repeat center;
+  background-size: contain;
+}
+
+/* Posicionamiento de las hojas */
+.zammi-muses__leaf--top-right {
+  top: 25%;
+  right: 80%;
+  width: 100px;
+  height: 100px;
+  background: url('../img/Leaf\ \(2\).png') no-repeat center;
+  background-size: contain;
+}
+
+.zammi-muses__leaf--bottom-left {
+  bottom: 80px;
+  left: -30px;
+  width: 100px;
+  height: 100px;
+  background: url('../img/Leaf.png') no-repeat center;
+  background-size: contain;
+}
+
   
   .zammi-muses__title {
-    font-size: 3rem;
-    font-weight: bold;
+    font-size: 5rem;
+    font-weight: bold;  
     color: var(--primary-color);
     margin-bottom: 1rem;
   }
@@ -21,8 +71,9 @@
   }
   
   .zammi-muses__get-to-know {
-    font-size: 3rem;
+    font-size: 5rem;
     font-weight: bold;
+    text-decoration: underline;
     color: var(--primary-color);
     margin-bottom: 2rem;
     text-transform: uppercase;
@@ -33,6 +84,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* Tres columnas */
     gap: 1.5rem;
+    margin: 70px;
   }
   
   /* Estilo para los elementos de cada musa */
@@ -41,7 +93,7 @@
   }
   
   .zammi-muses__image {
-    width: 100%;
+    width: 90%;
     height: 900px; /* Mantén la altura que prefieras */
     object-fit: cover;
     border-radius: 300px / 250px;
