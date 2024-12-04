@@ -22,22 +22,9 @@
 }
 
 body {
-  margin: 0; /* Elimina cualquier margen adicional */
-  overflow-x: hidden; /* Oculta el scroll horizontal */
+  overflow-x: hidden; /* Desactiva el scroll horizontal en todo el cuerpo */
+  margin: 0; /* Elimina cualquier margen por defecto */
 }
-
-/* block de transparencia */
-.image-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(108, 108, 108, 0.762); /* Gris translúcido */
-  pointer-events: none; /* Evita interferencias con eventos */
-  border-radius: 20px; /* Mantiene el borde redondeado */
-}
-
 
 /* Hero Section */
 .hero {
@@ -47,7 +34,9 @@ body {
 }
 
 .hero__header {
-  display: flex;
+  display: grid;
+  grid-area: header;
+  grid-template-columns: repeat(2 ,1fr);
   justify-content: space-between;
   align-items: center;
   padding: var(--padding);
@@ -155,7 +144,7 @@ body {
 }
 
 .hero__image-wrapper {
-  max-width: 30%;
+  max-width: 25%;
   position: relative;
 display: inline-block;
   overflow: hidden;
@@ -163,14 +152,17 @@ display: inline-block;
   width: 100%;
   border-radius: 40%;
   margin-right: 20%;
+  bottom: 20%;
+  
 }
 
 .hero__image {
   width: 100%;
   height: 100%;
   object-fit: cover; /* Ajusta la imagen dentro del contenedor */
-  object-position: center top; /* Recorta desde la parte superior de la imagen */
+  object-position: top center; /* Recorta desde la parte superior de la imagen */
   background-color: #000000;
+  filter: grayscale(100%);
 }
 
 /* Líneas decorativas */
@@ -183,16 +175,19 @@ display: inline-block;
 }
 
 .hero__line-blue {
-  width: 150px;
-  height: 4px;
+  width: 400px;
+  height: 100px;
+
   background-image: url('/img/Shape\ .png');
   background-size: cover;
+  bottom: -19%;
+  right: 20% ;
 }
 
 .hero__line-white {
   width: 130px;
-  height: 2px;
-  background-image: url('/img/Shape\ \ \(1\).png');
+  height: 100px;
+  background-image: url('/img/Shape');
   background-size: cover;
   bottom: 7%; /* Posición ligeramente arriba de la línea azul */
   left: 12%;
@@ -232,26 +227,313 @@ display: inline-block;
   top: -2%;
   left: 30%;
   transform: rotate(90deg);
+  filter: sepia(0.5) hue-rotate(40deg) brightness(1.2); /* Filtro amarillo cálido */
 }
 
 .hero__leaf--bottom-left {
-  bottom: 15%;
-  left: 10%;
+  bottom: 4%;
+  left: 5%;
+  transform: rotate(100deg);
+  filter: sepia(0.5) hue-rotate(40deg) brightness(1.2); /* Filtro amarillo cálido */
 }
 
 .hero__leaf--top-right {
-  top: 5%;
-  right: 15%;
+  top: 38%;
+  right: 92%;
+  transform: rotate(90deg);
+  filter: sepia(0.5) hue-rotate(40deg) brightness(1.2); /* Filtro amarillo cálido */
 }
 
 .hero__leaf--bottom-right {
-  bottom: 15%;
-  right: 10%;
+  bottom: -10%;
+  right: 15%;
+  filter: sepia(0.5) hue-rotate(40deg) brightness(1.2); /* Filtro amarillo cálido */
 }
 
 .hero__leaf--center {
-  top: 50%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
+  filter: sepia(0.5) hue-rotate(40deg) brightness(1.2); /* Filtro amarillo cálido */
 }
 
+
+/* Para pantallas de portátiles y PC (pantallas grandes) */
+@media (max-width: 1024px) {
+  .hero__header {
+    grid-template-columns: 1fr 1fr; /* Dos columnas más equilibradas */
+    justify-content: space-between;
+  }
+
+  .hero__content {
+    flex-direction: row; /* Mantener en fila */
+    align-items: flex-start;
+  }
+
+  .hero__text {
+    max-width: 50%; /* Limitar el ancho del texto */
+    margin-left: 5%;
+  }
+
+  .hero__title {
+    font-size: 60px; /* Ajuste de tamaño */
+  }
+
+  .hero__description {
+    font-size: 18px;
+  }
+
+  .hero__btn {
+    font-size: 18px;
+    padding: 0.5rem 2rem;
+    margin-left: 40%;
+  }
+
+  .hero__image-wrapper {
+    max-width: 35%; /* Imagen más pequeña */
+    margin-right: 10%;
+    bottom: 10%;
+  }
+
+  .hero__image {
+    object-position: top center;
+  }
+}
+
+
+/* Para pantallas grandes de escritorio (PC y portátiles grandes) */
+@media (max-width: 1200px) {
+  .section-lookbook__carousel {
+      max-width: 100%;
+      height: 100%;
+      overflow: hidden; /* Asegura que las imágenes no se desborden */
+  }
+
+  .section-lookbook__slides {
+      width: 400%;  /* 4 imágenes visibles, 25% por imagen */
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+  }
+
+  .section-lookbook__slide {
+      width: 25%;  /* 1 imagen visible por vez */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      height: 100%; /* Ajuste de altura */
+  }
+
+  .section-lookbook__slide img {
+      width: 100%; /* La imagen ocupa todo el contenedor */
+      height: auto; /* Mantiene la relación de aspecto */
+      object-fit: cover; /* Mantiene la imagen ajustada */
+      object-position: center; /* Centra la imagen */
+  }
+
+  .section-lookbook__overlay {
+      position: absolute;
+      bottom: 10%; /* Ajusta el texto hacia arriba */
+      left: 10%;
+      transform: translateX(-50%);
+      width: 80%;
+      background-color: rgba(0, 102, 204, 0.8); /* Bloque azul con opacidad */
+      color: white;
+      padding: 1rem;
+      border-radius: 8px;
+      text-align: center;
+      font-size: 24px;
+      z-index: 1;
+  }
+
+  .section-lookbook__title {
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: -1px;
+  }
+
+  .section-lookbook__dot {
+      width: 12px;
+      height: 12px;
+  }
+
+  .section-lookbook__pagination {
+      position: absolute;
+      bottom: 2rem; /* Los puntos deben quedar alineados en la parte inferior */
+      left: 50%;  /* Centra los puntos horizontalmente */
+      transform: translateX(-50%);
+      display: flex;
+      gap: 0.5rem;
+  }
+}
+
+/* Medias Queries para pantallas pequeñas */
+@media (max-width: 1200px) {
+  .trends__title {
+    font-size: 120px; /* Reducir el tamaño del título */
+  }
+
+  .trends__grid {
+    grid-template-columns: 1fr 1fr; /* Dos columnas */
+    max-width: 100%; /* Asegura que el grid no se desborde */
+  }
+
+  .trends__block--small {
+    grid-column: span 2; /* Ambas tarjetas pequeñas ocupan toda la fila */
+    align-items: center;
+  }
+
+  .trends__block--large {
+    grid-column: span 2; /* Tarjeta grande ocupa toda la fila */
+    grid-row: auto;
+  }
+
+  .trends__image {
+    width: 90%; /* Ajusta el tamaño de la imagen */
+    height: auto;
+  }
+
+  .trends__block--small:nth-child(1) .trends__image,
+  .trends__block--small:nth-child(2) .trends__image {
+    height: 300px; /* Ajusta la altura de las imágenes pequeñas */
+    object-position: center; /* Centra las imágenes */
+  }
+
+  .trends__block--large .trends__image {
+    height: 600px; /* Ajusta la altura de la imagen grande */
+    object-position: top center; /* Asegura que la imagen esté centrada */
+  }
+  .trends__decorative-flower {
+    top: 400%; /* Ajusta la flor para que no se superponga con el contenido */
+    right: 5%; /* Reduce el desplazamiento horizontal */
+    width: 120px; /* Reduce el tamaño de la flor */
+  }
+
+  .trends__decorative-leaf {
+    top: 390%; /* Ajusta la hoja para que no se vean fuera de lugar */
+    left: 0%; /* Ajusta la ubicación horizontal */
+    width: 60px; /* Reduce el tamaño de la hoja */
+  }
+}
+
+/* Medias Queries para pantallas grandes (PC / portátiles) */
+@media (max-width: 1200px) {
+  .play-style-container {
+    flex-direction: column; /* Cambia el diseño de lado a columna */
+    gap: 4rem; /* Ajusta el espacio entre las columnas */
+  }
+
+  .play-style-text {
+    font-size: 1.1rem; /* Ajusta el tamaño de la fuente en pantallas más pequeñas */
+  }
+
+  .play-style-title h1 {
+    font-size: 3.5rem; /* Reduce el tamaño del título */
+  }
+
+  .play-style-date {
+    font-size: 12px; /* Ajusta el tamaño de la fecha */
+    transform: translate(0, -100%);
+  }
+
+  .play-style-description {
+    font-size: 0.95rem; /* Ajusta el tamaño de la descripción */
+    transform: translate(0, 0%);
+  }
+
+  .play-style-button {
+    justify-content: center; /* Centra el botón */
+  }
+
+  .play-style-image {
+    max-width: 100%; /* Asegura que la imagen ocupe el 100% del contenedor */
+    filter: grayscale(100%); /* Reduce el filtro para que no se vea tan desaturada */
+  }
+}
+
+/* Medias Queries para pantallas grandes (PC / portátiles) */
+@media (max-width: 1200px) {
+  .zammi-muses__grid {
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas medianas */
+    margin: 30px; /* Ajusta el margen para mejorar el espacio */
+  }
+
+  .zammi-muses__title {
+    font-size: 4rem; /* Reduce el tamaño del título */
+  }
+
+  .zammi-muses__subtitle {
+    font-size: 1.8rem; /* Ajusta el tamaño del subtítulo */
+  }
+
+  .zammi-muses__get-to-know {
+    font-size: 3.5rem; /* Reduce el tamaño del texto de 'get to know' */
+  }
+
+  .zammi-muses__image {
+    width: 85%; /* Ajusta la imagen para que no ocupe tanto espacio */
+    height: 800px; /* Reduce la altura de la imagen */
+  }
+
+  .zammi-muses__name {
+    font-size: 1.8rem; /* Ajusta el tamaño del nombre */
+  }
+
+  .zammi-muses__description {
+    font-size: 0.9rem; /* Ajusta el tamaño de la descripción */
+  }
+
+  /* Ajusta la posición de las flores y hojas en pantallas medianas */
+  .zammi-muses__flower--top-left {
+    top: -20px;
+    left: 150px;
+    width: 120px;
+    height: 120px;
+  }
+
+  .zammi-muses__flower--bottom-right {
+    bottom: 50px;
+    right: -50px;
+    width: 120px;
+    height: 120px;
+  }
+
+  .zammi-muses__leaf--top-right {
+    top: 15%;
+    right: 75%;
+    width: 80px;
+    height: 80px;
+  }
+
+  .zammi-muses__leaf--bottom-left {
+    bottom: 60px;
+    left: -20px;
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .socials-title {
+      font-size: 3.5rem; /* Ajusta el título para pantallas medianas */
+  }
+
+  .socials-footer {
+      font-size: 1.8rem; /* Ajusta el tamaño del subtítulo */
+      margin-top: 1rem; /* Añade espacio superior */
+  }
+
+  .socials-images {
+      gap: 1.5rem; /* Reduce el espacio entre las imágenes */
+      flex-wrap: wrap; /* Permite que las imágenes se acomoden en varias filas */
+      justify-content: center; /* Centra las imágenes */
+  }
+
+  .socials-image {
+      max-width: 320px; /* Ajusta el tamaño de las imágenes */
+      flex: 1 1 45%; /* Habilita que las imágenes ocupen el 45% del ancho disponible */
+      height: auto; /* Mantiene la proporción de las imágenes */
+  }
+}

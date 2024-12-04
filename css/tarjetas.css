@@ -5,19 +5,41 @@
 }
 
 .trends__title {
-  font-size: 200px;
+  font-size:  180px;
   font-weight: bold;
   color: var(--primary-color);
   text-align: center;
   margin-bottom: 2rem;
 }
+/* Decoraciones */
+.trends__decorative-flower {
+  position: absolute;
+  top: 265%; /* Ajustar según el diseño */
+  right: 7%; /* Desplazamiento horizontal */
+  width: 150px; /* Tamaño de la flor */
+  height: auto;
+  z-index: 1; /* Para que esté sobre las imágenes */
+}
+
+.trends__decorative-leaf {
+  position: absolute;
+  top: 370%; /* Ajustar para que se vea entre la sección y el contenido previo */
+  left: -1%; /* Ubicación horizontal */
+  width: 80px; /* Tamaño de la hoja */
+  transform: rotate(90deg);
+  height: auto;
+  z-index: 1; /* Debajo del contenido principal */
+}
+
 
 /* Grid layout */
 .trends__grid {
   display: grid;
-  grid-template-columns: 1fr 2fr; /* Izquierda pequeña, derecha grande */
-  grid-template-rows: repeat(2, auto); /* Dos filas */
-  gap: 1rem;
+  grid-template-columns: 2fr 2fr; /* Deja la primera columna para espacio libre */
+  grid-gap: 1rem;
+  margin-left: auto; /* Para centrar el grid */
+  margin-right: auto; /* Para centrar el grid */
+  max-width: 190%; /* Ajusta el ancho total del contenedor */
 }
 
 .trends__block {
@@ -26,12 +48,13 @@
 }
 
 .trends__block--small {
-  grid-column: 1; /* Columna izquierda */
+  grid-column: 1; /* Mueve ambas tarjetas pequeñas a la segunda columna */
+  align-items: center;
 }
 
 .trends__block--large {
-  grid-column: 2; /* Columna derecha */
-  grid-row: 1 / span 2; /* Ocupa dos filas (vertical) */
+  grid-column: 2; /* La tarjeta grande ocupará la tercera columna */
+  grid-row: 1 / span 3; /* Sigue ocupando las dos filas verticales */
   display: flex;
   flex-direction: column;
   justify-content: flex-start; /* Alinea el contenido hacia el inicio del contenedor */
@@ -40,18 +63,20 @@
 
 /* Ajustes de las imágenes */
 .trends__image {
-  width: 80%;
+  width: 70%;
   height: auto;
   object-fit: cover;
   border: 1px solid var(--secondary-color);
+  filter: grayscale(100%);
+  
 }
 
 /* Imagen 1: Ajustar posición para enfocar pierna derecha y recortar la izquierda */
 .trends__block--small:nth-child(1) .trends__image {
-  height: 450px; /* Altura conservada */
+  height: 400px; /* Altura conservada */
   position: relative;
   object-fit: cover; /* Mantiene proporciones */
-  object-position: 40% bottom; /* Subimos un poco y desplazamos a la derecha */
+  object-position: 20% bottom; /* Subimos un poco y desplazamos a la derecha */
 }
 
 
@@ -66,7 +91,7 @@
 .trends__block--large .trends__image {
   position: relative;
   height: 800px; /* Mayor altura para destacar */
-  object-position: top; /* Enfoca la parte superior */
+  object-position: 100% top ; /* Enfoca la parte superior */
 }
 
 /* Texto debajo de las imágenes */
@@ -80,14 +105,16 @@
   color: var(--primary-color);
   text-transform: uppercase;
   margin-bottom: 0.2rem;
+  align-items: center;
 }
 
 /* Subrayado decorativo para h3 */
 .trends__headline {
-  font-size: 40px;
+  font-size: 30px;
   font-weight: bold;
   color: var(--primary-color);
   text-decoration: underline;
+  align-items: center;
 }
 
 

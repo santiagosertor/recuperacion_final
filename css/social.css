@@ -40,6 +40,7 @@
     object-fit: cover;
     border-radius: 10px; /* Bordes ligeramente redondeados */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+    filter: grayscale(100%);
   }
   
   /* Footer Section */

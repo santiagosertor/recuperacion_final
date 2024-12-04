@@ -101,6 +101,7 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
+    filter: grayscale(100%);
   }
   
   /* Imagen 1: Mantiene la imagen centrada */
