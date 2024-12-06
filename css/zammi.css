@@ -1,156 +1,177 @@
+
 /* Estilo general para la sección */
 .zammi-muses {
-    padding: 3rem 1rem;
-    background-color: var(--bg-color); /* Fondo general */
-    text-align: center;
-    position: relative; /* Necesario para posicionar los elementos decorativos */
-  }
+  padding: 3rem 1rem; /* Añade espacio interno en la parte superior/inferior y a los lados */
+  background-color: var(--bg-color); /* Fondo general con la variable definida */
+  text-align: center; /* Alineación del texto al centro */
+  position: relative; /* Necesario para posicionar los elementos decorativos */
+  z-index: -1; /* Asegura que los elementos decorativos no interfieran con el contenido */
+}
 
 /* Agregar elementos decorativos: flores y hojas */
-.zammi-muses__flower,
+.zammi-muses__flower {
+position: relative; /* Necesario para la posición absoluta de las flores dentro de este contenedor */
+pointer-events: none; /* Evita que las flores interfieran con los clics */
+overflow: hidden; /* Asegura que la flor no se desborde del contenedor */
+}
 .zammi-muses__leaf {
-  position: absolute;
-  pointer-events: none; /* Evita que interfieran con los clics */
-  z-index: 1; /* Asegura que queden detrás del contenido principal */
+position: relative; /* Necesario para la posición absoluta de las hojas dentro de este contenedor */
+pointer-events: none; /* Evita que las hojas interfieran con los clics */
 }
 
 /* Posicionamiento de las flores */
 .zammi-muses__flower--top-left {
-  top: -50px;
-  position: absolute;
-  left: 200px;
-  width: 150px;
-  height: 150px;
-  background: url('../img/Flower.png') no-repeat center;
-  background-size: contain;
-  z-index: 2;
+top: -70px; /* Posiciona la flor un poco fuera de la parte superior */
+position: absolute; /* Posición absoluta para colocarla donde se necesite */
+left: 200px; /* Desplaza la flor hacia la derecha */
+width: 150px; /* Tamaño de la flor */
+height: 150px; /* Tamaño de la flor */
+background: url('../img/Flower.png') no-repeat center; /* Imagen de la flor */
+background-size: cover; /* Ajusta la imagen de la flor para cubrir el área */
+z-index: 1; /* Asegura que la flor esté sobre otros elementos si es necesario */
+}
+
+.zammi-muses__flower--top-right {
+top: 20%; /* Posiciona la flor en el 20% desde la parte superior */
+position: absolute; /* Posición absoluta para control total */
+left: 85%; /* Posiciona la flor a la derecha */
+width: 150px; /* Tamaño de la flor */
+height: 150px; /* Tamaño de la flor */
+background: url('../img/Flower.png') no-repeat center; /* Imagen de la flor */
+background-size: cover; /* Ajuste de la imagen */
+z-index: 1; /* Asegura que esté sobre otros elementos */
 }
 
 .zammi-muses__flower--bottom-right {
-  bottom: 100px;
-  right: -70px;
-  width: 150px;
-  height: 150px;
-  background: url('../img/Flower.png') no-repeat center;
-  background-size: contain;
+bottom: 100px; /* Posiciona la flor 100px desde el fondo */
+position: absolute; /* Posición absoluta para colocarla donde se necesite */
+right: -70px; /* Desplaza la flor hacia la derecha */
+width: 150px; /* Tamaño de la flor */
+height: 150px; /* Tamaño de la flor */
+background: url('../img/Flower.png') no-repeat center; /* Imagen de la flor */
+background-size: contain; /* Ajusta la imagen de la flor para que se ajuste al contenedor */
 }
 
 /* Posicionamiento de las hojas */
 .zammi-muses__leaf--top-right {
-  top: 25%;
-  right: 80%;
-  width: 100px;
-  height: 100px;
-  background: url('../img/Leaf\ \(2\).png') no-repeat center;
-  background-size: contain;
+top: 25%; /* Posiciona la hoja en el 25% desde la parte superior */
+right: 80%; /* Posiciona la hoja en el 80% desde la derecha */
+position: absolute; /* Posición absoluta para control total */
+width: 100px; /* Tamaño de la hoja */
+height: 100px; /* Tamaño de la hoja */
+background: url('../img/Leaf\ \(2\).png') no-repeat center; /* Imagen de la hoja */
+background-size: contain; /* Ajuste de la imagen de la hoja */
 }
 
 .zammi-muses__leaf--bottom-left {
-  bottom: 80px;
-  left: -30px;
-  width: 100px;
-  height: 100px;
-  background: url('../img/Leaf.png') no-repeat center;
-  background-size: contain;
+bottom: 80px; /* Posiciona la hoja 80px desde el fondo */
+left: -30px; /* Posiciona la hoja hacia la izquierda */
+position: absolute; /* Posición absoluta */
+width: 100px; /* Tamaño de la hoja */
+height: 100px; /* Tamaño de la hoja */
+background: url('../img/Leaf.png') no-repeat center; /* Imagen de la hoja */
+background-size: contain; /* Ajuste de la imagen de la hoja */
 }
 
-  
-  .zammi-muses__title {
-    font-size: 5rem;
-    font-weight: bold;  
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-  }
-  
-  .zammi-muses__subtitle {
-    font-size: 2rem;
-    font-weight: bold;
-    color: var(--primary-color);
-    margin-bottom: 2rem;
-    line-height: 1.6;
-  }
-  
-  .zammi-muses__get-to-know {
-    font-size: 5rem;
-    font-weight: bold;
-    text-decoration: underline;
-    color: var(--primary-color);
-    margin-bottom: 2rem;
-    text-transform: uppercase;
-  }
-  
-  /* Estilo para el grid de musas */
-  .zammi-muses__grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Tres columnas */
-    gap: 1.5rem;
-    margin: 70px;
-  }
-  
-  /* Estilo para los elementos de cada musa */
-  .zammi-muses__item {
-    text-align: center;
-  }
-  
-  .zammi-muses__image {
-    width: 90%;
-    height: 900px; /* Mantén la altura que prefieras */
-    object-fit: cover;
-    border-radius: 300px / 250px;
-    margin-bottom: 1rem;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    filter: grayscale(100%);
-  }
-  
-  /* Imagen 1: Mantiene la imagen centrada */
+/* Estilo del título */
+.zammi-muses__title {
+font-size: 5rem; /* Tamaño de fuente grande */
+font-weight: bold; /* Negrita para el título */
+color: var(--primary-color); /* Color del texto con la variable primaria */
+margin-bottom: 1rem; /* Espacio debajo del título */
+}
+
+/* Estilo del subtítulo */
+.zammi-muses__subtitle {
+font-size: 2rem; /* Tamaño de fuente mediano */
+font-weight: bold; /* Negrita */
+color: var(--primary-color); /* Color del texto */
+margin-bottom: 2rem; /* Espacio debajo del subtítulo */
+line-height: 1.6; /* Aumenta el interlineado */
+}
+
+/* Estilo del encabezado 'Get to know' */
+.zammi-muses__get-to-know {
+font-size: 5rem; /* Tamaño de fuente grande */
+font-weight: bold; /* Negrita */
+text-decoration: underline; /* Subraya el texto */
+color: var(--primary-color); /* Color primario del texto */
+margin-bottom: 2rem; /* Espacio debajo del texto */
+text-transform: uppercase; /* Convierte el texto a mayúsculas */
+}
+
+/* Estilo para el grid de musas */
+.zammi-muses__grid {
+display: grid; /* Utiliza grid para el diseño */
+grid-template-columns: repeat(3, 1fr); /* Tres columnas */
+gap: 1.5rem; /* Espacio entre las columnas */
+margin: 70px; /* Espacio alrededor del grid */
+}
+
+/* Estilo para los elementos individuales dentro del grid */
+.zammi-muses__item {
+text-align: center; /* Alinea el texto al centro */
+}
+
+/* Estilo para las imágenes dentro del grid */
+.zammi-muses__image {
+width: 90%; /* El 90% del contenedor */
+height: 900px; /* Altura personalizada para las imágenes */
+object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+border-radius: 300px / 250px; /* Bordes redondeados */
+margin-bottom: 1rem; /* Espacio debajo de cada imagen */
+display: block; /* Hace que la imagen sea un bloque */
+margin-left: auto; /* Centra la imagen horizontalmente */
+margin-right: auto; /* Centra la imagen horizontalmente */
+filter: grayscale(100%); /* Aplica filtro en escala de grises */
+}
+
+/* Ajustes específicos para las imágenes */
 .zammi-muses__image:nth-child(1) {
-    object-position: center; /* Centrado de la imagen */
-  }
-  
-  /* Imagen 2: Recortar de manera que se enfoque más en la parte superior */
-  .zammi-muses__image:nth-child(2) {
-    object-position: 50% 25%; /* Centrado horizontal y elevado verticalmente para mostrar la parte superior */
-  }
-  
-  /* Imagen 3: Ajuste para mostrar la parte superior y reducir el fondo */
-  .zammi-muses__image:nth-child(3) {
-    object-position: 50% 30%; /* Centrado horizontal y subiendo para mostrar más el torso */
-  }
-  
-  .zammi-muses__name {
-    font-size: 2rem;
-    font-weight: bold;
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
-  }
-  
-  .zammi-muses__description {
-    font-size: 1rem;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-  }
-  
-  .zammi-muses__link {
-    font-size: 1rem;
-    width: 150px;
-    border-radius: 20px;
-    height: 40px;
-    font-weight: bold;
-    background-color: var(--primary-color);
-    color: var(--bg-color);
-    text-decoration: none;
-    text-transform: uppercase;
-    display: inline-block;
-    align-content: center;
-    margin-top: 0.5rem;
-  }
-  
-  /* Estilo para el hover en el link */
-  .zammi-muses__link:hover {
-    color: var(--secondary-color);
-    text-decoration: underline;
-  }
-  
-  
+object-position: var(--object-position); /* Centra la imagen */
+}
+
+.zammi-muses__image:nth-child(2) {
+object-position: 100% 95%; /* Ajusta la imagen para enfocarse más en la parte superior */
+}
+
+.zammi-muses__image:nth-child(3) {
+object-position: 50% 30%; /* Mueve la imagen para enfocar el torso */
+}
+
+/* Estilo para los nombres de las musas */
+.zammi-muses__name {
+font-size: 2rem; /* Tamaño de fuente para el nombre */
+font-weight: bold; /* Negrita */
+color: var(--primary-color); /* Color primario */
+margin-bottom: 0.5rem; /* Espacio debajo del nombre */
+}
+
+/* Estilo para las descripciones de las musas */
+.zammi-muses__description {
+font-size: 1rem; /* Tamaño de fuente más pequeño */
+color: var(--primary-color); /* Color primario */
+margin-bottom: 1rem; /* Espacio debajo de la descripción */
+}
+
+/* Estilo para el enlace */
+.zammi-muses__link {
+font-size: 1rem; /* Tamaño de fuente */
+width: 150px; /* Ancho del enlace */
+border-radius: 20px; /* Bordes redondeados */
+height: 40px; /* Altura del enlace */
+font-weight: bold; /* Negrita */
+background-color: var(--primary-color); /* Fondo con color primario */
+color: var(--bg-color); /* Color de texto con color de fondo */
+text-decoration: none; /* Sin subrayado por defecto */
+text-transform: uppercase; /* Convierte el texto a mayúsculas */
+display: inline-block; /* Hace que el enlace se ajuste al contenido */
+align-content: center; /* Alineación en el centro */
+margin-top: 0.5rem; /* Espacio superior */
+}
+
+/* Estilo para el hover en el enlace */
+.zammi-muses__link:hover {
+color: var(--secondary-color); /* Cambia el color al pasar el mouse */
+text-decoration: underline; /* Subraya el enlace al pasar el mouse */
+}

@@ -1,4 +1,5 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100..900;1,100..900&family=Faculty+Glyphic&family=Roboto+Slab:wght@100..900&display=swap');
 @import url(lookbook.css);
 @import url(tarjetas.css);
 @import url(play.css);
@@ -11,292 +12,317 @@
   --secondary-color: #000; /* Negro */
   --text-color: #333; /* Gris oscuro */
   --bg-color: #f9f9f9; /* Fondo claro */
-  --font-family: 'Arial', sans-serif;
+  --color-white: white;
+  --color-gris-claro:#f0f0f0;
+  --font-family: "Chivo", sans-serif;
   --padding: 1rem;
   --border-radius: 8px solid #1a73e8 ;
+  --justify-content-center:center;
+  --object-position:center;
   
 }
 *{
 
-  font-family: 'Arial', sans-serif;
+  font-family: var(--font-family);
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
 }
 
 body {
   overflow-x: hidden; /* Desactiva el scroll horizontal en todo el cuerpo */
   margin: 0; /* Elimina cualquier margen por defecto */
+ 
 }
 
 /* Hero Section */
 .hero {
-  background-color: var(--bg-color);
-  font-family: var(--font-family);
-  padding: 30px;
+  background-color: var(--bg-color); /* Establece el color de fondo usando la variable CSS 'bg-color' */
+  font-family: var(--font-family); /* Aplica la fuente definida en la variable 'font-family' */
+  padding: 30px; /* Añade un relleno de 30px alrededor del contenido */
 }
 
 .hero__header {
-  display: grid;
-  grid-area: header;
-  grid-template-columns: repeat(2 ,1fr);
-  justify-content: space-between;
-  align-items: center;
-  padding: var(--padding);
+  display: grid; /* Utiliza un grid para organizar los elementos */
+  grid-area: header; /* Asigna esta área al contenedor de la cabecera */
+  grid-template-columns: repeat(2 ,1fr); /* Define dos columnas del mismo tamaño */
+  justify-content: space-between; /* Coloca los elementos a los extremos */
+  align-items: center; /* Centra los elementos verticalmente */
+  padding: var(--padding); /* Usa un padding definido previamente */
 }
 
 .hero__search {
-  display: flex;
-  flex-direction: column; /* Coloca el icono y la línea en columna */
-  align-items: end; /* Centra horizontalmente el icono con respecto a la línea */
-  justify-content: flex-end; /* Asegura que la línea quede en la parte inferior */
+  display: flex; /* Utiliza un diseño flexible para organizar los elementos */
+  flex-direction: column; /* Organiza los elementos hijos en columna */
+  align-items: end; /* Alinea los elementos al final horizontalmente */
+  justify-content: flex-end; /* Alinea los elementos al fondo del contenedor */
 }
 
 .hero__logo {
-  display: flex;
-  align-items: baseline;
-  margin-top: 100px;
-}
-.hero__logo-icono{
-  display: flex;
-  margin-right: 10px;
-  font-size: 30px;
-  color: var(--primary-color);
-  font-weight: bold;
+  display: flex; /* Flexbox para alinear los elementos dentro del logo */
+  align-items: baseline; /* Alinea los elementos al eje de la base */
+  margin-top: 100px; /* Añade un margen superior de 100px */
 }
 
-.hero__search-icono{
-  color: var(--primary-color);
-  margin-top: 200px;
+.hero__logo-icono {
+  display: flex; /* Organiza los iconos del logo en flex */
+  margin-right: 10px; /* Añade un margen a la derecha */
+  font-size: 30px; /* Tamaño de la fuente del icono */
+  color: var(--primary-color); /* Usa el color primario de las variables CSS */
+  font-weight: bold; /* Aplica negrita al icono */
+}
+
+.hero__search-icono {
+  color: var(--primary-color); /* Aplica el color primario al icono de búsqueda */
+  margin-top: 200px; /* Aplica un margen superior de 200px */
 }
 
 .hero__logo-text {
-  font-weight: bold;
-  color: var(--primary-color);
-  font-size: 2.0rem;
+  font-weight: bold; /* Aplica negrita al texto del logo */
+  color: var(--primary-color); /* Usa el color primario */
+  font-size: 2.0rem; /* Tamaño de fuente de 2 rem */
 }
 
 .hero__logo-style {
-  font-weight: bold;
-  color: var(--primary-color);
-  margin-left: 0.5rem;
-  font-size: 2.0rem
+  font-weight: bold; /* Aplica negrita al texto */
+  color: var(--primary-color); /* Usa el color primario */
+  margin-left: 0.5rem; /* Margen izquierdo de 0.5 rem */
+  font-size: 2.0rem; /* Tamaño de la fuente */
 }
 
 .hero__menu-btn,
 .hero__search-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 1.2rem;
-  color: var(--primary-color);
+  background: none; /* Sin fondo en los botones */
+  border: none; /* Sin borde */
+  cursor: pointer; /* Cambia el cursor a puntero cuando el botón está activo */
+  font-size: 1.2rem; /* Tamaño de fuente de 1.2 rem */
+  color: var(--primary-color); /* Color primario en el texto */
 }
 
 .hero__search-line {
-  display: block;
-  width: 200px; /* Largo de la línea horizontal */
-  height: 2px; /* Grosor de la línea */
-  background-color: var(--primary-color); /* Color de la línea */
+  display: block; /* Se asegura que sea un bloque */
+  width: 200px; /* Define el ancho de la línea */
+  height: 2px; /* Define el grosor de la línea */
+  background-color: var(--primary-color); /* Usa el color primario como color de la línea */
   margin-left: 0.5rem; /* Espacio entre el icono y la línea */
-  
-
 }
 
 .hero__content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 2rem;
+  display: flex; /* Utiliza un diseño flexible */
+  justify-content: space-between; /* Coloca los elementos con espacio entre ellos */
+  align-items: center; /* Centra los elementos verticalmente */
+  margin-top: 2rem; /* Añade un margen superior de 2 rem */
 }
 
 .hero__text {
-  max-width: 40%;
-  margin-left: 10%;
-  margin-bottom: 20%
+  max-width: 40%; /* El ancho máximo de este contenedor es el 40% */
+  margin-left: 10%; /* Añade un margen izquierdo del 10% */
+  margin-bottom: 20%; /* Añade un margen inferior del 20% */
 }
 
 .hero__title {
-  font-size: 80px;
-  font-weight: bold;
-  color: var(--primary-color);
-  margin-bottom: 1rem;
-  font-weight: bold;
+  font-size: 80px; /* Tamaño de fuente grande para el título */
+  font-weight: bold; /* Aplica negrita al título */
+  color: var(--primary-color); /* Usa el color primario */
+  margin-bottom: 1rem; /* Margen inferior de 1 rem */
 }
 
 .hero__description {
-  color: var(--primary-color);
-  margin-bottom: 1.5rem;
-  font-size: 20px;
+  color: var(--primary-color); /* Usa el color primario */
+  margin-bottom: 1.5rem; /* Margen inferior de 1.5 rem */
+  font-size: 20px; /* Tamaño de fuente de 20px */
 }
 
 .hero__btn {
-  display: inline-block;
-  padding: 0.5rem 2rem;
-  background-color: var(--bg-color);
-  color: var(--primary-color);
-  text-decoration: none;
-  border-radius:20px;
-  border: 1px solid var(--primary-color);
-  font-weight: bold;
-  font-size: 20px;
-  margin-left: 70%;
+  display: inline-block; /* Hace que el botón se comporte como un bloque en línea */
+  padding: 0.5rem 2rem; /* Relleno interno de 0.5 rem y 2 rem */
+  background-color: var(--bg-color); /* Fondo con el color de fondo de la página */
+  color: var(--primary-color); /* Texto con el color primario */
+  text-decoration: none; /* Elimina la decoración de texto */
+  border-radius: 20px; /* Bordes redondeados */
+  border: 1px solid var(--primary-color); /* Borde del botón */
+  font-weight: bold; /* Aplica negrita al texto */
+  font-size: 20px; /* Tamaño de la fuente */
+  margin-left: 70%; /* Desplaza el botón hacia la derecha */
 }
-.hero__btn :hover{
-  background-color: var(--primary-color);
-  transition: 1s;
+
+.hero__btn:hover {
+  background-color: var(--primary-color); /* Cambia el fondo a color primario al hacer hover */
+  transition: 1s; /* Aplica una transición suave de 1 segundo */
 }
 
 .hero__image-wrapper {
-  max-width: 25%;
-  position: relative;
-display: inline-block;
-  overflow: hidden;
-  height: auto;
-  width: 100%;
-  border-radius: 40%;
-  margin-right: 20%;
-  bottom: 20%;
-  
+  max-width: 25%; /* El ancho máximo de la imagen es el 25% del contenedor */
+  position: relative; /* Establece una posición relativa para usar posicionamiento absoluto en los elementos dentro */
+  display: inline-block; /* Muestra la imagen como bloque en línea */
+  overflow: hidden; /* Oculta el contenido que sobresale del contenedor */
+  height: auto; /* Mantiene la altura automática */
+  width: 100%; /* El contenedor ocupa todo el ancho disponible */
+  border-radius: 40%; /* Bordes redondeados con un radio de 40% */
+  margin-right: 20%; /* Añade un margen a la derecha del 20% */
+  bottom: 20%; /* Mueve la imagen 20% hacia abajo */
 }
 
 .hero__image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ajusta la imagen dentro del contenedor */
-  object-position: top center; /* Recorta desde la parte superior de la imagen */
-  background-color: #000000;
-  filter: grayscale(100%);
+  width: 100%; /* La imagen ocupa todo el ancho del contenedor */
+  height: 100%; /* La imagen ocupa todo el alto del contenedor */
+  position: relative; /* Posición relativa para posicionar la imagen */
+  object-fit: cover; /* Ajusta la imagen para cubrir completamente el contenedor */
+  object-position: top center; /* Recorta la imagen desde la parte superior central */
+  bottom: 40%; /* Mueve la imagen hacia abajo */
+  background-color: #000000; /* Fondo negro para el contenedor */
+  filter: grayscale(100%); /* Aplica un filtro en escala de grises */
 }
 
 /* Líneas decorativas */
 .hero__line-blue,
 .hero__line-white {
-  position: absolute;
-  bottom: 5%; /* Ajustar posición en base al diseño */
-  left: 10%; /* Ajustar posición en base al diseño */
-  z-index: 10;
+  position: absolute; /* Posiciona las líneas de forma absoluta dentro de su contenedor */
+  bottom: 5%; /* Posiciona las líneas a un 5% desde el fondo del contenedor */
+  left: 10%; /* Posiciona las líneas a un 10% desde el lado izquierdo */
+  z-index: 10; /* Asegura que las líneas se ubiquen por encima de otros elementos */
 }
 
 .hero__line-blue {
-  width: 400px;
-  height: 100px;
-
-  background-image: url('/img/Shape\ .png');
-  background-size: cover;
-  bottom: -19%;
-  right: 20% ;
+  width: 400px; /* Establece el ancho de la línea azul */
+  height: 100px; /* Establece la altura de la línea azul */
+  background-image: url('/img/Shape\ .png'); /* Define la imagen de fondo para la línea azul */
+  background-size: cover; /* Asegura que la imagen cubra todo el contenedor */
+  bottom: -19%; /* Posiciona la línea un 19% más abajo */
+  right: 20%; /* Mueve la línea un 20% hacia la derecha */
 }
 
 .hero__line-white {
-  width: 130px;
-  height: 100px;
-  background-image: url('/img/Shape');
-  background-size: cover;
-  bottom: 7%; /* Posición ligeramente arriba de la línea azul */
-  left: 12%;
+  width: 500px; /* Establece el ancho de la línea blanca */
+  height: 360px; /* Establece la altura de la línea blanca */
+  transform: rotate(45deg); /* Rota la línea 45 grados */
+  background-size: cover; /* Asegura que la imagen cubra todo el contenedor */
+  bottom: 7%; /* Posiciona la línea un 7% más arriba que la línea azul */
+  left: 50%; /* Centra la línea blanca a la mitad del contenedor */
 }
 
 /* Flores decorativas */
 .hero__flower {
-  position: absolute;
-  width: 100px; /* Tamaño ajustado */
-  height: auto;
-  z-index: 5;
+  position: absolute; /* Posiciona las flores de manera absoluta */
+  width: 100px; /* Establece el tamaño de las flores */
+  height: auto; /* Mantiene la altura proporcional */
+  z-index: 5; /* Establece la prioridad de apilamiento para las flores */
 }
 
 .hero__flower--left {
-  width: 10%;
-  top: 80%;
-  left: -4%;
- 
+  width: 10%; /* El ancho de la flor a la izquierda es el 10% */
+  top: 80%; /* Posiciona la flor en el 80% desde la parte superior */
+  left: -4%; /* Posiciona la flor ligeramente fuera del contenedor a la izquierda */
 }
 
 .hero__flower--right {
-  width: 20%;
-  bottom: 20%;
-  right: -8%;
+  width: 20%; /* El ancho de la flor a la derecha es el 20% */
+  bottom: 20%; /* Posiciona la flor en el 20% desde el fondo */
+  right: -8%; /* Posiciona la flor ligeramente fuera del contenedor a la derecha */
 }
 
 /* Hojas decorativas */
 .hero__leaf {
-  position: absolute;
-  width: 60px; /* Tamaño ajustado */
-  height: auto;
-  opacity: 0.8;
-  z-index: 3;
+  position: absolute; /* Posiciona las hojas de manera absoluta */
+  width: 60px; /* Establece el tamaño de las hojas */
+  height: auto; /* Mantiene la altura proporcional */
+  opacity: 0.8; /* Da una opacidad del 80% */
+  z-index: 3; /* Establece la prioridad de apilamiento para las hojas */
 }
 
 .hero__leaf--top-left {
-  top: -2%;
-  left: 30%;
-  transform: rotate(90deg);
-  filter: sepia(0.5) hue-rotate(40deg) brightness(1.2); /* Filtro amarillo cálido */
+  top: -2%; /* Posiciona la hoja superior izquierda a un 2% desde la parte superior */
+  left: 30%; /* Posiciona la hoja a la izquierda en el 30% desde el lado izquierdo */
+  transform: rotate(90deg); /* Rota la hoja 90 grados */
+  filter: sepia(0.5) hue-rotate(40deg) brightness(1.2); /* Aplica un filtro amarillo cálido */
 }
 
 .hero__leaf--bottom-left {
-  bottom: 4%;
-  left: 5%;
-  transform: rotate(100deg);
-  filter: sepia(0.5) hue-rotate(40deg) brightness(1.2); /* Filtro amarillo cálido */
+  bottom: 4%; /* Posiciona la hoja inferior izquierda en el 4% desde el fondo */
+  left: 5%; /* Posiciona la hoja a la izquierda en el 5% desde el lado izquierdo */
+  transform: rotate(100deg); /* Rota la hoja 100 grados */
+  filter: sepia(0.5) hue-rotate(40deg) brightness(1.2); /* Aplica un filtro amarillo cálido */
 }
 
 .hero__leaf--top-right {
-  top: 38%;
-  right: 92%;
-  transform: rotate(90deg);
-  filter: sepia(0.5) hue-rotate(40deg) brightness(1.2); /* Filtro amarillo cálido */
+  top: 38%; /* Posiciona la hoja superior derecha en el 38% desde la parte superior */
+  right: 92%; /* Posiciona la hoja a la derecha en el 92% desde el lado derecho */
+  transform: rotate(90deg); /* Rota la hoja 90 grados */
+  filter: sepia(0.5) hue-rotate(40deg) brightness(1.2); /* Aplica un filtro amarillo cálido */
 }
 
 .hero__leaf--bottom-right {
-  bottom: -10%;
-  right: 15%;
-  filter: sepia(0.5) hue-rotate(40deg) brightness(1.2); /* Filtro amarillo cálido */
+  bottom: -10%; /* Posiciona la hoja inferior derecha en el 10% hacia abajo */
+  right: 15%; /* Posiciona la hoja a la derecha en el 15% desde el lado derecho */
+  filter: sepia(0.5) hue-rotate(40deg) brightness(1.2); /* Aplica un filtro amarillo cálido */
 }
 
 .hero__leaf--center {
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  filter: sepia(0.5) hue-rotate(40deg) brightness(1.2); /* Filtro amarillo cálido */
+  top: 30%; /* Posiciona la hoja en el centro a un 30% desde la parte superior */
+  left: 50%; /* Posiciona la hoja en el centro a un 50% desde el lado izquierdo */
+  transform: translate(-50%, -50%); /* Centra la hoja en el contenedor */
+  filter: sepia(0.5) hue-rotate(40deg) brightness(1.2); /* Aplica un filtro amarillo cálido */
 }
+
 
 
 /* Para pantallas de portátiles y PC (pantallas grandes) */
 @media (max-width: 1024px) {
   .hero__header {
     grid-template-columns: 1fr 1fr; /* Dos columnas más equilibradas */
-    justify-content: space-between;
+    justify-content: space-between; /* Alineación de los elementos con espacio entre ellos */
+  }
+
+  /* Línea azul decorativa */
+  .hero__line-blue {
+    max-width: 40%; /* Ajusta el tamaño de la línea */
+    top: 95%; /* Ajusta la posición vertical */
+    left: 17%; /* Ajusta la posición horizontal */
+  }
+
+  /* Línea blanca decorativa */
+  .hero__line-white {
+    max-width: 20%; /* Ajusta el tamaño de la línea */
+    top: 45%; /* Ajusta la posición vertical */
+    right: 15%; /* Ajusta la posición horizontal */
+    transform: rotate(10deg); /* Rota la línea */
   }
 
   .hero__content {
-    flex-direction: row; /* Mantener en fila */
-    align-items: flex-start;
+    flex-direction: row; /* Disposición en fila */
+    align-items: flex-start; /* Alinea el contenido al inicio */
   }
 
   .hero__text {
-    max-width: 50%; /* Limitar el ancho del texto */
-    margin-left: 5%;
+    max-width: 50%; /* Limita el ancho del texto */
+    margin-left: 5%; /* Añade espacio a la izquierda del texto */
   }
 
   .hero__title {
-    font-size: 60px; /* Ajuste de tamaño */
+    font-size: 60px; /* Ajusta el tamaño del título */
   }
 
   .hero__description {
-    font-size: 18px;
+    font-size: 18px; /* Ajusta el tamaño de la descripción */
   }
 
   .hero__btn {
-    font-size: 18px;
-    padding: 0.5rem 2rem;
-    margin-left: 40%;
+    font-size: 18px; /* Ajusta el tamaño del botón */
+    padding: 0.5rem 2rem; /* Añade relleno al botón */
+    margin-left: 40%; /* Añade espacio a la izquierda del botón */
   }
 
   .hero__image-wrapper {
-    max-width: 35%; /* Imagen más pequeña */
-    margin-right: 10%;
-    bottom: 10%;
+    max-width: 35%; /* Ajusta el tamaño de la imagen */
+    margin-right: 10%; /* Añade espacio a la derecha */
+    bottom: 10%; /* Ajusta la posición vertical de la imagen */
   }
 
   .hero__image {
-    object-position: top center;
+    object-position: top center; /* Centra la imagen en la parte superior */
+  }
+  .hero__leaf--bottom-right{
+    bottom: 8%;
   }
 }
 
@@ -304,75 +330,75 @@ display: inline-block;
 /* Para pantallas grandes de escritorio (PC y portátiles grandes) */
 @media (max-width: 1200px) {
   .section-lookbook__carousel {
-      max-width: 100%;
-      height: 100%;
-      overflow: hidden; /* Asegura que las imágenes no se desborden */
+    max-width: 100%; /* Asegura que el carrusel no se desborde */
+    height: 100%; /* Asegura que el carrusel ocupe todo el espacio disponible */
+    overflow: hidden; /* Oculta los elementos que se desborden */
   }
 
   .section-lookbook__slides {
-      width: 400%;  /* 4 imágenes visibles, 25% por imagen */
-      display: flex;
-      transition: transform 0.5s ease-in-out;
+      width: 400%; /* Muestra 4 imágenes al 25% de cada una */
+      display: flex; /* Flexbox para la disposición de las imágenes */
+      transition: transform 0.5s ease-in-out; /* Efecto de transición suave */
   }
 
   .section-lookbook__slide {
-      width: 25%;  /* 1 imagen visible por vez */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-      height: 100%; /* Ajuste de altura */
+      width: 25%; /* 1 imagen visible a la vez */
+      display: flex; /* Flexbox para centrar el contenido */
+      justify-content: center; /* Centra el contenido */
+      align-items: center; /* Centra el contenido verticalmente */
+      position: relative; /* Posición relativa para el contenido */
+      overflow: hidden; /* Oculta el contenido que se desborde */
+      height: 100%; /* Asegura que la imagen ocupe todo el contenedor */
   }
 
   .section-lookbook__slide img {
       width: 100%; /* La imagen ocupa todo el contenedor */
-      height: auto; /* Mantiene la relación de aspecto */
-      object-fit: cover; /* Mantiene la imagen ajustada */
+      height: auto; /* Mantiene la relación de aspecto de la imagen */
+      object-fit: cover; /* Ajusta la imagen para cubrir el área */
       object-position: center; /* Centra la imagen */
   }
 
   .section-lookbook__overlay {
-      position: absolute;
-      bottom: 10%; /* Ajusta el texto hacia arriba */
-      left: 10%;
-      transform: translateX(-50%);
-      width: 80%;
-      background-color: rgba(0, 102, 204, 0.8); /* Bloque azul con opacidad */
-      color: white;
-      padding: 1rem;
-      border-radius: 8px;
-      text-align: center;
-      font-size: 24px;
-      z-index: 1;
+    position: absolute; /* Posiciona el texto sobre la imagen */
+    bottom: 10%; /* Ajusta la posición vertical */
+    left: 10%; /* Ajusta la posición horizontal */
+    transform: translateX(-50%); /* Centra el texto */
+    width: 80%; /* Ajusta el ancho del overlay */
+    background-color:var(--primary-color); /* Fondo azul con opacidad */
+    color: var(--color-white); /* Color del texto blanco */
+    padding: 1rem; /* Añade relleno */
+    border-radius: 8px; /* Bordes redondeados */
+    text-align: center; /* Alinea el texto al centro */
+    font-size: 24px; /* Tamaño de la fuente */
+    z-index: 1; /* Asegura que el overlay esté encima de la imagen */
   }
 
   .section-lookbook__title {
-      font-size: 20px;
-      font-weight: bold;
-      text-align: center;
-      margin-bottom: -1px;
+      font-size: 20px; /* Ajusta el tamaño del título */
+      font-weight: bold; /* Negrita para el título */
+      text-align: center; /* Alinea el título al centro */
+      margin-bottom: -1px; /* Elimina el margen inferior */
   }
 
   .section-lookbook__dot {
-      width: 12px;
-      height: 12px;
+      width: 12px; /* Tamaño de los puntos de la paginación */
+      height: 12px; /* Tamaño de los puntos */
   }
 
   .section-lookbook__pagination {
-      position: absolute;
-      bottom: 2rem; /* Los puntos deben quedar alineados en la parte inferior */
-      left: 50%;  /* Centra los puntos horizontalmente */
-      transform: translateX(-50%);
-      display: flex;
-      gap: 0.5rem;
+      position: absolute; /* Posiciona los puntos en la parte inferior */
+      bottom: 2rem; /* Los puntos quedan alineados en la parte inferior */
+      left: 50%; /* Centra los puntos horizontalmente */
+      transform: translateX(-50%); /* Centra los puntos */
+      display: flex; /* Flexbox para los puntos */
+      gap: 0.5rem; /* Espacio entre los puntos */
   }
 }
 
 /* Medias Queries para pantallas pequeñas */
 @media (max-width: 1200px) {
   .trends__title {
-    font-size: 120px; /* Reducir el tamaño del título */
+    font-size: 120px; /* Reduce el tamaño del título */
   }
 
   .trends__grid {
@@ -382,17 +408,17 @@ display: inline-block;
 
   .trends__block--small {
     grid-column: span 2; /* Ambas tarjetas pequeñas ocupan toda la fila */
-    align-items: center;
+    align-items: center; /* Centra el contenido */
   }
 
   .trends__block--large {
     grid-column: span 2; /* Tarjeta grande ocupa toda la fila */
-    grid-row: auto;
+    grid-row: auto; /* Ajuste automático de la fila */
   }
 
   .trends__image {
     width: 90%; /* Ajusta el tamaño de la imagen */
-    height: auto;
+    height: auto; /* Mantiene la relación de aspecto */
   }
 
   .trends__block--small:nth-child(1) .trends__image,
@@ -403,16 +429,17 @@ display: inline-block;
 
   .trends__block--large .trends__image {
     height: 600px; /* Ajusta la altura de la imagen grande */
-    object-position: top center; /* Asegura que la imagen esté centrada */
+    object-position: top center; /* Centra la imagen */
   }
+
   .trends__decorative-flower {
-    top: 400%; /* Ajusta la flor para que no se superponga con el contenido */
-    right: 5%; /* Reduce el desplazamiento horizontal */
+    top: 414%; /* Ajusta la flor para que no se superponga con el contenido */
+    right: 5%; /* Ajusta la ubicación horizontal */
     width: 120px; /* Reduce el tamaño de la flor */
   }
 
   .trends__decorative-leaf {
-    top: 390%; /* Ajusta la hoja para que no se vean fuera de lugar */
+    top: 390%; /* Ajusta la hoja para que no se vea fuera de lugar */
     left: 0%; /* Ajusta la ubicación horizontal */
     width: 60px; /* Reduce el tamaño de la hoja */
   }
@@ -435,12 +462,12 @@ display: inline-block;
 
   .play-style-date {
     font-size: 12px; /* Ajusta el tamaño de la fecha */
-    transform: translate(0, -100%);
+    transform: translate(0, -100%); /* Ajusta la posición de la fecha */
   }
 
   .play-style-description {
     font-size: 0.95rem; /* Ajusta el tamaño de la descripción */
-    transform: translate(0, 0%);
+    transform: translate(0, 0%); /* Ajusta la posición de la descripción */
   }
 
   .play-style-button {
@@ -449,7 +476,21 @@ display: inline-block;
 
   .play-style-image {
     max-width: 100%; /* Asegura que la imagen ocupe el 100% del contenedor */
-    filter: grayscale(100%); /* Reduce el filtro para que no se vea tan desaturada */
+    filter: grayscale(100%); /* Aplica un filtro en escala de grises */
+  }
+
+  .play-style__line-white-1{
+    width: 60%; /* Escala la línea */
+    left: 40%; /* Ajusta la posición horizontal */
+    top: 8%; /* Ajusta la posición vertical */
+    transform: translateY(-60%); /* Ajusta la posición */
+  }
+
+  .play-style__line-white-2{
+    width: 60%; /* Escala la línea */
+    left: 1%; /* Ajusta la posición horizontal */
+    top: 40%; /* Ajusta la posición vertical */
+    transform: translateY(-60%); /* Ajusta la posición */
   }
 }
 
@@ -457,7 +498,7 @@ display: inline-block;
 @media (max-width: 1200px) {
   .zammi-muses__grid {
     grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas medianas */
-    margin: 30px; /* Ajusta el margen para mejorar el espacio */
+    margin: 30px; /* Ajusta el margen */
   }
 
   .zammi-muses__title {
@@ -469,11 +510,11 @@ display: inline-block;
   }
 
   .zammi-muses__get-to-know {
-    font-size: 3.5rem; /* Reduce el tamaño del texto de 'get to know' */
+    font-size: 3.5rem; /* Ajusta el tamaño del texto */
   }
 
   .zammi-muses__image {
-    width: 85%; /* Ajusta la imagen para que no ocupe tanto espacio */
+    width: 85%; /* Ajusta el tamaño de la imagen */
     height: 800px; /* Reduce la altura de la imagen */
   }
 
@@ -487,37 +528,39 @@ display: inline-block;
 
   /* Ajusta la posición de las flores y hojas en pantallas medianas */
   .zammi-muses__flower--top-left {
-    top: -20px;
-    left: 150px;
-    width: 120px;
-    height: 120px;
+    top: -60px; /* Ajusta la posición vertical */
+    left: 150px; /* Ajusta la posición horizontal */
+    width: 120px; /* Reduce el tamaño de la flor */
+    height: 120px; /* Ajusta el tamaño de la flor */
+    z-index: -1; /* Envía la flor hacia atrás */
   }
 
   .zammi-muses__flower--bottom-right {
-    bottom: 50px;
-    right: -50px;
-    width: 120px;
-    height: 120px;
+    bottom: 50px; /* Ajusta la posición vertical */
+    right: -50px; /* Ajusta la posición horizontal */
+    width: 120px; /* Ajusta el tamaño de la flor */
+    height: 120px; /* Ajusta el tamaño de la flor */
   }
 
   .zammi-muses__leaf--top-right {
-    top: 15%;
-    right: 75%;
-    width: 80px;
-    height: 80px;
+    top: 15%; /* Ajusta la posición vertical */
+    right: 75%; /* Ajusta la posición horizontal */
+    width: 80px; /* Ajusta el tamaño de la hoja */
+    height: 80px; /* Ajusta el tamaño de la hoja */
   }
 
   .zammi-muses__leaf--bottom-left {
-    bottom: 60px;
-    left: -20px;
-    width: 80px;
-    height: 80px;
+    bottom: 60px; /* Ajusta la posición vertical */
+    left: -20px; /* Ajusta la posición horizontal */
+    width: 80px; /* Ajusta el tamaño de la hoja */
+    height: 80px; /* Ajusta el tamaño de la hoja */
   }
 }
 
+/* Para pantallas más pequeñas */
 @media (max-width: 1024px) {
   .socials-title {
-      font-size: 3.5rem; /* Ajusta el título para pantallas medianas */
+      font-size: 3.5rem; /* Ajusta el tamaño del título para pantallas más pequeñas */
   }
 
   .socials-footer {
@@ -533,7 +576,7 @@ display: inline-block;
 
   .socials-image {
       max-width: 320px; /* Ajusta el tamaño de las imágenes */
-      flex: 1 1 45%; /* Habilita que las imágenes ocupen el 45% del ancho disponible */
+      flex: 1 1 45%; /* Ajusta el tamaño de las imágenes dentro del contenedor */
       height: auto; /* Mantiene la proporción de las imágenes */
   }
 }

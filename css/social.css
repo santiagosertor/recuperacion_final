@@ -1,112 +1,106 @@
 /* Estilo para el título (SAY HELLO...) */
 .socials-title {
-    font-size: 4rem;
-    font-weight: bold;
-    text-align: center;
-    color: var(--primary-color); /* Color azul principal */
-    text-transform: uppercase;
-    text-decoration: underline;
-    margin-bottom: 1rem;
-    
-    position: relative;
-  }
-  
+  font-size: 4rem; /* Tamaño grande para el título */
+  font-weight: bold; /* Texto en negrita */
+  text-align: center; /* Alineación centrada del texto */
+  color: var(--primary-color); /* Color azul principal */
+  text-transform: uppercase; /* Texto en mayúsculas */
+  text-decoration: underline; /* Subrayado del texto */
+  margin-bottom: 1rem; /* Espacio debajo del título */
+  position: relative; /* Posición relativa para manejar elementos dentro de este contenedor */
+}
 
-  
-  /* Estilo para el subtítulo (FOLLOW US...) */
-  .socials-footer {
-    font-size: 2rem;
-    text-align: center;
-    color: var(--primary-color);
-    font-weight: bold;
-    text-transform: uppercase;
-    margin-top: 1.5rem;
-    gap: 3rem;
-  }
-  
-
+/* Estilo para el subtítulo (FOLLOW US...) */
+.socials-footer {
+  font-size: 2rem; /* Tamaño de fuente mediano */
+  text-align: center; /* Alineación centrada del texto */
+  color: var(--primary-color); /* Color azul principal */
+  font-weight: bold; /* Texto en negrita */
+  text-transform: uppercase; /* Texto en mayúsculas */
+  margin-top: 1.5rem; /* Espacio arriba del subtítulo */
+  gap: 3rem; /* Espacio entre elementos dentro del contenedor */
+}
 
 /* Estilo para imágenes */
 .socials-images {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 2rem;
-  }
-  
-  .socials-image {
-    width: 350px;
-    height: 400px;
-    object-fit: cover;
-    border-radius: 10px; /* Bordes ligeramente redondeados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
-    filter: grayscale(100%);
-  }
-  
-  /* Footer Section */
-  .footer-section {
-    background-color: var(--primary-color);
-    color: #fff;
-    padding: 2rem 1rem;
-    font-family: Arial, sans-serif;
-  }
-  
-  .footer-content {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 1rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding-bottom: 1rem;
-  }
-  
-  .footer-logo h3 {
-    font-size: 1.5rem;
-    font-weight: bold;
-    padding-left: 20%;
-    margin-right: 20%;
-  }
-  
-  .footer-links {
-    display: flex;
-    justify-content: space-between;
-    gap: 5rem;
-  }
-  
-  .footer-column {
-    text-align: left;
-  }
-  
-  .footer-column h4 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-  }
-  
-  .footer-column ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .footer-column li {
-    font-size: 0.9rem;
-    line-height: 1.5;
-  }
-  
-  /* Línea separadora */
-  .footer-separator {
-    width: 100%;
-    height: 1px;
-    background-color: #fff; /* Línea blanca */
-    margin: 1rem 0;
-  }
-  
-  /* Footer inferior */
-  .footer-bottom {
-    text-align: center;
-    font-size: 0.8rem;
-    color: #f0f0f0;
-  }
-  
+  display: flex; /* Usa flexbox para la disposición de las imágenes */
+  justify-content: center; /* Centra las imágenes horizontalmente */
+  gap: 1rem; /* Espacio entre las imágenes */
+  margin-bottom: 2rem; /* Espacio abajo */
+}
+
+.socials-image {
+  width: 350px; /* Ancho de cada imagen */
+  height: 400px; /* Altura de las imágenes */
+  object-fit: cover; /* Ajusta las imágenes para cubrir el área sin distorsionarse */
+  border-radius: 10px; /* Bordes ligeramente redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para dar profundidad */
+  filter: grayscale(100%); /* Aplica un filtro en escala de grises */
+}
+
+/* Footer Section */
+.footer-section {
+  background-color: var(--primary-color); /* Fondo azul principal */
+  color: #fff; /* Color del texto blanco */
+  padding: 2rem 1rem; /* Espaciado interno */
+  font-family: Arial, sans-serif; /* Fuente Arial */
+}
+
+.footer-content {
+  display: flex; /* Flexbox para organizar el contenido */
+  justify-content: space-between; /* Espacio entre los elementos */
+  flex-wrap: wrap; /* Los elementos se ajustan cuando no caben en una línea */
+  gap: 1rem; /* Espacio entre los elementos */
+  max-width: 1200px; /* Ancho máximo para evitar que el contenido se extienda demasiado */
+  margin: 0 auto; /* Centra el contenido */
+  padding-bottom: 1rem; /* Espacio abajo del contenido */
+}
+
+.footer-logo h3 {
+  font-size: 1.5rem; /* Tamaño de fuente para el logo */
+  font-weight: bold; /* Texto en negrita */
+  padding-left: 20%; /* Alineación hacia la izquierda */
+  margin-right: 20%; /* Alineación hacia la derecha */
+}
+
+.footer-links {
+  display: flex; /* Flexbox para los enlaces */
+  justify-content: space-between; /* Espacio entre los enlaces */
+  gap: 5rem; /* Espacio entre las columnas de enlaces */
+}
+
+.footer-column {
+  text-align: left; /* Alinea el texto a la izquierda */
+}
+
+.footer-column h4 {
+  font-size: 1.5rem; /* Tamaño de fuente para los títulos de las columnas */
+  margin-bottom: 0.5rem; /* Espacio debajo del título */
+  font-weight: bold; /* Texto en negrita */
+}
+
+.footer-column ul {
+  list-style: none; /* Elimina los puntos de las listas */
+  padding: 0; /* Elimina el relleno */
+  margin: 0; /* Elimina el margen */
+}
+
+.footer-column li {
+  font-size: 0.9rem; /* Tamaño de fuente pequeño para los elementos de la lista */
+  line-height: 1.5; /* Espaciado entre líneas */
+}
+
+/* Línea separadora */
+.footer-separator {
+  width: 100%; /* Ancho completo de la línea */
+  height: 1px; /* Grosor de la línea */
+  background-color: var(--color-white); /* Color blanco */
+  margin: 1rem 0; /* Espacio arriba y abajo de la línea */
+}
+
+/* Footer inferior */
+.footer-bottom {
+  text-align: center; /* Alinea el texto al centro */
+  font-size: 0.8rem; /* Tamaño de fuente pequeño para el texto inferior */
+  color:var(--color-gris-claro); /* Color gris claro */
+}

@@ -1,132 +1,131 @@
 /* Estilo de la sección */
 .section-lookbook {
-    padding: 2rem;
-    background-color: #0066cc;
-    border-radius: 16px;
-    display: flex;
-    justify-content: center;
-    align-items: center; /* Centrado vertical y horizontal */
-    flex-direction: column;
-    position: relative;
-    height: 140vh; /* Ajusta la altura para que la imagen no ocupe toda la pantalla */
-    overflow: hidden; /* Asegura que no se desborde contenido */
-  }
-  
-  /* Contenedor del carrusel */
-  .section-lookbook__carousel {
-    position: relative;
-    max-width: 1500px;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
-  
-  /* Ocultar inputs de tipo radio */
-  .section-lookbook__radio {
-    display: none;
-    
-  }
-  
-  /* Contenedor de las imágenes */
-  .section-lookbook__slides {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    width: 400%; /* Hace que las 4 imágenes ocupen el 100% (25% por cada imagen) */
-    height: 80%; /* Ajusta la altura para que la imagen no ocupe toda la sección */
-  }
-  
-  /* Cada slide (una imagen) */
-  .section-lookbook__slide {
-    width: 25%; /* Cada imagen ocupa el 25% del contenedor */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    overflow: hidden; /* Evitar que se desborde el contenido */
-    height: 120%; /* La altura de cada slide es el 100% del contenedor */
-    filter: grayscale(100%);
-    border-top-left-radius: 10%;
-    border-bottom-right-radius: 10%;
-  }
-  
-  /* Estilo de la imagen */
-  .section-lookbook__slide img {
-    width: 100%;  /* La imagen ocupa todo el ancho disponible */
-    height: 80%;  /* La imagen ocupa toda la altura del contenedor */
-    object-fit: cover;  /* Asegura que la imagen cubra todo el contenedor */
-    object-position: center top;  /* Centra la imagen al top, ajustando el recorte */
-    border-radius: 16px;
-  }
-  
-  /* Contenedor del texto */
-  .section-lookbook__overlay {
-    position: absolute;
-    bottom: 2rem; /* Ajusta un poco más abajo para que no quede tan pegado a la imagen */
-    left: 10%;
-    bottom: 3%;
-    transform: translateX(-50%); /* Centra el texto debajo de la imagen */
-    color: #ffffff;
-    background-color: #0066cc; /* Color de fondo azul */
-    padding: 1rem;
-    border-radius: 2px; /* Bordes redondeados */
-    font-weight: bold; /* Negrita para el texto */
-    text-align: center; /* Centra el texto dentro del contenedor */
-    width: 80%; /* Ajusta el ancho del texto */
-  }
-  
-  /* Estilo del texto */
-  .section-lookbook__text {
-    font-size: 40px;
-    margin: 0;
-  }
-  
-  /* Título */
-  .section-lookbook__title {
-    font-size: 40px;
-    margin: 0.5rem 0 0;
-  }
-  
-  /* Movimiento entre slides (controlado por radio inputs) */
-  #slide1:checked ~ .section-lookbook__slides {
-    transform: translateX(0);
-  }
-  
-  #slide2:checked ~ .section-lookbook__slides {
-    transform: translateX(-25%); /* Mueve a la segunda imagen */
-  }
-  
-  #slide3:checked ~ .section-lookbook__slides {
-    transform: translateX(-50%); /* Mueve a la tercera imagen */
-  }
-  
-  #slide4:checked ~ .section-lookbook__slides {
-    transform: translateX(-75%); /* Mueve a la cuarta imagen */
-  }
-  
-  /* Navegación por puntos */
-  .section-lookbook__pagination {
-    position: absolute;
-    bottom: 1rem; /* Los puntos están al final, debajo de la imagen */
-    left: 90%;
-    transform: translateX(-50%); /* Centra los puntos horizontalmente */
-    display: flex;
-    gap: 0.5rem;
-  }
-  
-  .section-lookbook__dot {
-    width: 12px; /* Aumenta el tamaño de los puntos */
-    height: 12px; /* Aumenta el tamaño de los puntos */
-    background-color: #cccccc;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  /* Cambio de color en los puntos al estar seleccionados */
-  #slide1:checked ~ .section-lookbook__pagination label[for="slide1"],
-  #slide2:checked ~ .section-lookbook__pagination label[for="slide2"],
-  #slide3:checked ~ .section-lookbook__pagination label[for="slide3"],
-  #slide4:checked ~ .section-lookbook__pagination label[for="slide4"] {
-    background-color: #ffffff;
-  }
-  
+  padding: 2rem; /* Espaciado interior alrededor del contenedor */
+  background-color: var(--primary-color); /* Color de fondo de la sección */
+  border-radius: 16px; /* Bordes redondeados de la sección */
+  display: flex; /* Utiliza flexbox para alinear los elementos */
+  justify-content: var(--justify-content-center); /* Centra el contenido horizontalmente */
+  align-items: center; /* Centra el contenido verticalmente */
+  flex-direction: column; /* Disposición de los elementos en columna */
+  position: relative; /* Relativa para permitir la colocación de elementos en absoluto */
+  height: 140vh; /* Altura de la sección, un poco mayor que el viewport */
+  overflow: hidden; /* Asegura que no se desborden los elementos */
+}
+
+/* Contenedor del carrusel */
+.section-lookbook__carousel {
+  position: relative; /* Relativo para posicionar los elementos dentro */
+  max-width: 1500px; /* Define un máximo de ancho para el carrusel */
+  width: 100%; /* El carrusel ocupará el 100% del contenedor */
+  height: 100%; /* Ocupa toda la altura del contenedor */
+  overflow: hidden; /* Evita que el contenido se desborde fuera del contenedor */
+}
+
+/* Ocultar inputs de tipo radio */
+.section-lookbook__radio {
+  display: none; /* No mostrar los inputs de tipo radio, utilizados para el control del carrusel */
+}
+
+/* Contenedor de las imágenes */
+.section-lookbook__slides {
+  display: flex; /* Utiliza flexbox para disponer las imágenes horizontalmente */
+  transition: transform 0.5s ease-in-out; /* Animación suave de desplazamiento entre imágenes */
+  width: 400%; /* Ocupa el 400% del contenedor para 4 imágenes */
+  height: 80%; /* Altura de las imágenes dentro del contenedor */
+}
+
+/* Cada slide (una imagen) */
+.section-lookbook__slide {
+  width: 25%; /* Cada imagen ocupa el 25% del contenedor */
+  display: flex; /* Utiliza flexbox para centrar la imagen dentro de su contenedor */
+  justify-content: var(--justify-content-center); /* Centra la imagen horizontalmente */
+  align-items: center; /* Centra la imagen verticalmente */
+  position: relative; /* Posiciona el contenido dentro del contenedor */
+  overflow: hidden; /* Evita que la imagen se desborde fuera del contenedor */
+  height: 120%; /* Hace que la altura del slide sea 120% del contenedor para un mayor enfoque en la imagen */
+  filter: grayscale(100%); /* Aplica un filtro en blanco y negro a las imágenes */
+  border-top-left-radius: 10%; /* Bordes redondeados en la parte superior izquierda */
+  border-bottom-right-radius: 10%; /* Bordes redondeados en la parte inferior derecha */
+}
+
+/* Estilo de la imagen */
+.section-lookbook__slide img {
+  width: 100%; /* La imagen ocupa todo el ancho disponible del contenedor */
+  height: 80%; /* La imagen ocupa el 80% de la altura del contenedor */
+  object-fit: cover; /* Asegura que la imagen cubra todo el espacio sin deformarse */
+  object-position: center top; /* Centra la imagen en la parte superior del contenedor */
+  border-radius: 16px; /* Bordes redondeados de la imagen */
+}
+
+/* Contenedor del texto */
+.section-lookbook__overlay {
+  position: absolute; /* Posiciona el texto de forma absoluta dentro del slide */
+  bottom: 2rem; /* Asegura que el texto esté un poco más abajo dentro del contenedor */
+  left: 10%; /* Posiciona el texto 10% desde el lado izquierdo */
+  transform: translateX(-50%); /* Centra el texto horizontalmente */
+  color: var(--color-white); /* Color del texto en blanco */
+  background-color: var(--primary-color); /* Fondo azul para el contenedor del texto */
+  padding: 1rem; /* Espaciado interior alrededor del texto */
+  border-radius: 2px; /* Bordes ligeramente redondeados */
+  font-weight: bold; /* Negrita para el texto */
+  text-align: center; /* Centra el texto dentro del contenedor */
+  width: 80%; /* El texto ocupará el 80% del ancho del contenedor */
+}
+
+/* Estilo del texto */
+.section-lookbook__text {
+  font-size: 40px; /* Tamaño de la fuente del texto */
+  margin: 0; /* Elimina el margen */
+}
+
+/* Título */
+.section-lookbook__title {
+  font-size: 40px; /* Tamaño de la fuente para el título */
+  margin: 0.5rem 0 0; /* Espaciado superior e inferior para el título */
+}
+
+/* Movimiento entre slides (controlado por radio inputs) */
+#slide1:checked ~ .section-lookbook__slides {
+  transform: translateX(0); /* Mueve la primera imagen al inicio */
+}
+
+#slide2:checked ~ .section-lookbook__slides {
+  transform: translateX(-25%); /* Mueve la vista a la segunda imagen */
+}
+
+#slide3:checked ~ .section-lookbook__slides {
+  transform: translateX(-50%); /* Mueve la vista a la tercera imagen */
+}
+
+#slide4:checked ~ .section-lookbook__slides {
+  transform: translateX(-75%); /* Mueve la vista a la cuarta imagen */
+}
+
+/* Navegación por puntos */
+.section-lookbook__pagination {
+  position: absolute; /* Los puntos se posicionan de forma absoluta dentro de la sección */
+  bottom: 1rem; /* Los puntos están al final, debajo de la imagen */
+  left: 90%; /* Se posicionan en el 90% desde la izquierda */
+  transform: translateX(-50%); /* Centra los puntos horizontalmente */
+  display: flex; /* Utiliza flexbox para distribuir los puntos */
+  gap: 0.5rem; /* Espacio entre cada punto */
+}
+
+/* Estilo de los puntos */
+.section-lookbook__dot {
+  width: 12px; /* Ancho de los puntos */
+  height: 12px; /* Alto de los puntos */
+  background-color: #cccccc; /* Color de los puntos cuando no están seleccionados */
+  border-radius: 50%; /* Hace que los puntos sean circulares */
+  cursor: pointer; /* Cambia el cursor cuando pasas sobre el punto */
+  transition: background-color 0.3s; /* Efecto de transición al cambiar el color */
+}
+
+/* Cambio de color en los puntos de paginación cuando el slide correspondiente está seleccionado */
+#slide1:checked ~ .section-lookbook__pagination label[for="slide1"], /* Cuando el primer slide está seleccionado */
+#slide2:checked ~ .section-lookbook__pagination label[for="slide2"], /* Cuando el segundo slide está seleccionado */
+#slide3:checked ~ .section-lookbook__pagination label[for="slide3"], /* Cuando el tercer slide está seleccionado */
+#slide4:checked ~ .section-lookbook__pagination label[for="slide4"] { /* Cuando el cuarto slide está seleccionado */
+    background-color: var(--color-white); /* Los puntos seleccionados se vuelven blancos */
+}
+

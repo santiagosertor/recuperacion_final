@@ -1,129 +1,127 @@
 /* General */
 .trends {
-  padding: var(--padding);
-  background-color: var(--bg-color);
+  padding: var(--padding); /* Aplica el valor de la variable de padding global */
+  background-color: var(--bg-color); /* Asigna el color de fondo desde la variable global */
 }
 
+/* Título principal */
 .trends__title {
-  font-size:  180px;
-  font-weight: bold;
-  color: var(--primary-color);
-  text-align: center;
-  margin-bottom: 2rem;
+  font-size: 180px; /* Tamaño grande de fuente para el título */
+  font-weight: bold; /* Hace el texto en negrita */
+  color: var(--primary-color); /* Color de texto definido en la variable global */
+  text-align: center; /* Centra el texto horizontalmente */
+  margin-bottom: 2rem; /* Añade margen debajo del título */
 }
+
 /* Decoraciones */
 .trends__decorative-flower {
-  position: absolute;
-  top: 265%; /* Ajustar según el diseño */
-  right: 7%; /* Desplazamiento horizontal */
-  width: 150px; /* Tamaño de la flor */
-  height: auto;
-  z-index: 1; /* Para que esté sobre las imágenes */
+  position: absolute; /* Posiciona la flor de manera absoluta con respecto al contenedor */
+  top: 310%; /* Ajusta la ubicación verticalmente, más allá del contenedor */
+  right: 12%; /* Posiciona la flor hacia la derecha */
+  width: 150px; /* Define el tamaño de la flor */
+  height: auto; /* Ajusta la altura según la proporción de la imagen */
+  z-index: 1; /* Asegura que la flor se superponga a las imágenes */
 }
 
 .trends__decorative-leaf {
-  position: absolute;
-  top: 370%; /* Ajustar para que se vea entre la sección y el contenido previo */
-  left: -1%; /* Ubicación horizontal */
-  width: 80px; /* Tamaño de la hoja */
-  transform: rotate(90deg);
-  height: auto;
-  z-index: 1; /* Debajo del contenido principal */
+  position: absolute; /* Posiciona la hoja de manera absoluta */
+  top: 370%; /* Ajusta la ubicación verticalmente, más allá del contenedor */
+  left: -1%; /* Posiciona la hoja ligeramente a la izquierda */
+  width: 80px; /* Define el tamaño de la hoja */
+  transform: rotate(90deg); /* Rota la hoja para que se vea horizontal */
+  height: auto; /* Ajusta la altura según la proporción */
+  z-index: 1; /* Asegura que la hoja esté debajo del contenido principal */
 }
-
 
 /* Grid layout */
 .trends__grid {
-  display: grid;
-  grid-template-columns: 2fr 2fr; /* Deja la primera columna para espacio libre */
-  grid-gap: 1rem;
-  margin-left: auto; /* Para centrar el grid */
-  margin-right: auto; /* Para centrar el grid */
+  display: grid; /* Utiliza un layout de grid para distribuir los elementos */
+  grid-template-columns: 2fr 2fr; /* Dos columnas de igual tamaño */
+  grid-gap: 1rem; /* Espacio entre las celdas del grid */
+  margin-left: auto; /* Centra el grid horizontalmente */
+  margin-right: auto; /* Centra el grid horizontalmente */
   max-width: 190%; /* Ajusta el ancho total del contenedor */
 }
 
 .trends__block {
-  display: flex;
-  flex-direction: column;
+  display: flex; /* Utiliza flexbox para los elementos dentro del bloque */
+  flex-direction: column; /* Acomoda los elementos en una columna */
 }
 
 .trends__block--small {
-  grid-column: 1; /* Mueve ambas tarjetas pequeñas a la segunda columna */
-  align-items: center;
+  grid-column: 1; /* Asigna el bloque pequeño a la primera columna */
+  align-items: center; /* Centra los elementos dentro del bloque pequeño */
 }
 
 .trends__block--large {
-  grid-column: 2; /* La tarjeta grande ocupará la tercera columna */
-  grid-row: 1 / span 3; /* Sigue ocupando las dos filas verticales */
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start; /* Alinea el contenido hacia el inicio del contenedor */
-  position: relative; /* Necesario para ajustes más controlados */
+  grid-column: 2; /* Asigna el bloque grande a la segunda columna */
+  grid-row: 1 / span 3; /* Hace que el bloque grande ocupe tres filas */
+  display: flex; /* Utiliza flexbox para organizar los elementos dentro del bloque */
+  flex-direction: column; /* Los elementos se organizan en una columna */
+  justify-content: flex-start; /* Alinea los elementos al principio del contenedor */
+  position: relative; /* Establece la posición relativa para controlar elementos hijos */
 }
 
 /* Ajustes de las imágenes */
 .trends__image {
-  width: 70%;
-  height: auto;
-  object-fit: cover;
-  border: 1px solid var(--secondary-color);
-  filter: grayscale(100%);
-  
+  width: 70%; /* Las imágenes ocuparán el 70% del ancho disponible */
+  height: auto; /* La altura se ajusta automáticamente según la proporción */
+  object-fit: cover; /* Asegura que la imagen cubra completamente el área del contenedor */
+  border: 1px solid var(--secondary-color); /* Borde alrededor de las imágenes */
+  filter: grayscale(100%); /* Aplica un filtro en escala de grises a las imágenes */
 }
 
 /* Imagen 1: Ajustar posición para enfocar pierna derecha y recortar la izquierda */
 .trends__block--small:nth-child(1) .trends__image {
-  height: 400px; /* Altura conservada */
-  position: relative;
-  object-fit: cover; /* Mantiene proporciones */
-  object-position: 20% bottom; /* Subimos un poco y desplazamos a la derecha */
+  height: 400px; /* Altura de la imagen */
+  position: relative; /* Posiciona la imagen de manera relativa dentro del bloque */
+  object-position: 20% bottom; /* Ajusta la imagen para enfocar la pierna derecha y recortar la izquierda */
 }
-
 
 /* Imagen 2: Mostrar de la boca al brasier */
 .trends__block--small:nth-child(2) .trends__image {
   height: 400px; /* Altura ampliada */
-  position: relative;
-  object-position: center ; /* Centra desde la parte inferior */
+  position: relative; /* Posiciona la imagen de manera relativa */
+  object-position: center; /* Centra la imagen desde la parte inferior */
 }
 
 /* Imagen 3: Mostrar parte superior completa y reducir tamaño */
 .trends__block--large .trends__image {
-  position: relative;
-  height: 800px; /* Mayor altura para destacar */
-  object-position: 100% top ; /* Enfoca la parte superior */
+  position: relative; /* Posiciona la imagen de manera relativa dentro del bloque */
+  height: 800px; /* Altura mayor para resaltar la imagen */
+  object-position: 100% top; /* Enfoca la parte superior de la imagen */
 }
 
 /* Texto debajo de las imágenes */
 .trends__text {
-  margin-top: 0.5rem;
+  margin-top: 0.5rem; /* Añade un margen superior al texto */
 }
 
 .trends__category {
-  font-size: 20px;
-  font-weight: bold;
-  color: var(--primary-color);
-  text-transform: uppercase;
-  margin-bottom: 0.2rem;
-  align-items: center;
+  font-size: 20px; /* Tamaño de fuente pequeño para la categoría */
+  font-weight: bold; /* Hace el texto en negrita */
+  color: var(--primary-color); /* Color de texto desde la variable global */
+  text-transform: uppercase; /* Convierte el texto a mayúsculas */
+  margin-bottom: 0.2rem; /* Añade un pequeño margen inferior */
+  align-items: center; /* Centra el texto verticalmente */
 }
 
 /* Subrayado decorativo para h3 */
 .trends__headline {
-  font-size: 30px;
-  font-weight: bold;
-  color: var(--primary-color);
-  text-decoration: underline;
-  align-items: center;
+  font-size: 30px; /* Tamaño de fuente para el encabezado */
+  font-weight: bold; /* Hace el texto en negrita */
+  color: var(--primary-color); /* Color de texto desde la variable global */
+  text-decoration: underline; /* Añade un subrayado decorativo */
+  align-items: center; /* Centra el texto verticalmente */
 }
-
 
 .trends__link {
-  display: block;
-  text-align: right;
-  font-size: 0.9rem;
-  font-weight: bold;
-  color: var(--primary-color);
-  text-decoration: none;
-  margin-top: -1rem; /* Subimos un poco el texto */
+  display: block; /* Hace que el enlace sea un bloque */
+  text-align: right; /* Alinea el texto a la derecha */
+  font-size: 0.9rem; /* Tamaño de fuente pequeño para el enlace */
+  font-weight: bold; /* Hace el texto en negrita */
+  color: var(--primary-color); /* Color de texto desde la variable global */
+  text-decoration: none; /* Elimina el subrayado predeterminado */
+  margin-top: -1rem; /* Ajusta la posición del enlace hacia arriba */
 }
+
